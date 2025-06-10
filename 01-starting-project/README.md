@@ -36,6 +36,18 @@ Bunun yerine tüm komponentler standalone:true olarak değerlendirecek. Eğer bi
   })
 ```
 
+# CLI ile Component Oluşturma
+
+`ng generate component`
+
+veya
+
+`ng g c`
+
+test dosyalarını hariç tutmak için
+
+`ng generate component user --skip-tests`
+
 # Essentials
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
