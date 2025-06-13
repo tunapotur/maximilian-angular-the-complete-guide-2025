@@ -3,9 +3,12 @@ button {
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 0.5rem;
-  background-color: #433352;
-  color: #c3b3d1;
-  border: none;
+  /* background-color: #433352;
+  color: #c3b3d1; 
+  border: none;*/
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
   font: inherit;
   cursor: pointer;
   width: 100%;
