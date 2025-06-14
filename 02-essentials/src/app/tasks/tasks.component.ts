@@ -16,7 +16,21 @@ export class TasksComponent {
   @Input({ required: true }) name!: string;
   isAddingTask = false;
 
-  constructor(private tasksService: TasksService) {}
+  private tasksService: TasksService;
+
+  constructor(tasksService: TasksService) {
+    this.tasksService = tasksService;
+  }
+
+  /**
+   * üste bulunan constructor yerine doğrudan bu şekilde çalıştırılabilir.
+   */
+  // private tasksService = inject(TasksService);
+
+  /**
+   * üstte bulunan sınıf değişkeni ve constructor metodunu kısa yolu
+   */
+  // constructor(private tasksService: TasksService) {}
 
   get selectedUserTasks() {
     return this.tasksService.getUserTasks(this.userId);

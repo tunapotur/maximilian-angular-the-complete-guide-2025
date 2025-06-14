@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { type NewTaskData } from '../task/task.model';
 import { TasksService } from '../tasks.service';
 
 @Component({
@@ -18,6 +17,15 @@ export class NewTaskComponent {
   enteredSummary = '';
   enteredDate = '';
   private tasksService = inject(TasksService);
+
+  // üstteki satır yerine bu şeklide de kullanım mümkün
+  /* 
+    private tasksService: TasksService;
+
+    constructor(tasksService: TasksService) {
+      this.tasksService = tasksService;
+    } 
+  */
 
   onCancel() {
     this.close.emit();
