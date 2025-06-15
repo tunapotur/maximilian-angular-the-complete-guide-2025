@@ -22,15 +22,11 @@ export class TasksComponent {
     this.tasksService = tasksService;
   }
 
-  /**
-   * üste bulunan constructor yerine doğrudan bu şekilde çalıştırılabilir.
-   */
-  // private tasksService = inject(TasksService);
-
-  /**
-   * üstte bulunan sınıf değişkeni ve constructor metodunu kısa yolu
-   */
+  //* Üstte yapılan constructor yapısının kısa hali
   // constructor(private tasksService: TasksService) {}
+
+  //* tasksService bu şekildeki gibi kullanılabilir
+  // private tasksService = inject(TasksService);
 
   get selectedUserTasks() {
     return this.tasksService.getUserTasks(this.userId);
