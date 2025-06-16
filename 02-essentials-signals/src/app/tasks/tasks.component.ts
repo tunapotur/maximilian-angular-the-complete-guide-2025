@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { TaskComponent } from './task/task.component';
 import { NewTaskComponent } from './new-task/new-task.component';
@@ -12,8 +12,9 @@ import { TasksService } from './tasks.service';
   imports: [TaskComponent, NewTaskComponent],
 })
 export class TasksComponent {
-  @Input({ required: true }) userId!: string;
-  @Input({ required: true }) name!: string;
+  userId = input.required<string>();
+  name = input.required<string>();
+
   isAddingTask = false;
 
   private tasksService: TasksService;
@@ -29,7 +30,7 @@ export class TasksComponent {
   // private tasksService = inject(TasksService);
 
   get selectedUserTasks() {
-    return this.tasksService.getUserTasks(this.userId);
+    return this.tasksService.getUserTasks(this.userId());
   }
 
   onStartAddTask() {

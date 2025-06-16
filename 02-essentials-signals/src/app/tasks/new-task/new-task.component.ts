@@ -1,12 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  input,
-  Output,
-  inject,
-  signal,
-  output,
-} from '@angular/core';
+import { Component, input, inject, signal, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { TasksService } from '../tasks.service';
@@ -19,13 +11,14 @@ import { TasksService } from '../tasks.service';
   styleUrl: './new-task.component.css',
 })
 export class NewTaskComponent {
-  // @Output() close = new EventEmitter<void>();
   close = output<void>();
 
   userId = input.required<string>();
+
   enteredTitle = signal('');
   enteredSummary = signal('');
   enteredDate = signal('');
+
   private tasksService = inject(TasksService);
 
   onCancel() {
